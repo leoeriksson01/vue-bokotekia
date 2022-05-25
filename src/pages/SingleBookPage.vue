@@ -120,7 +120,6 @@ export default {
             .then((res) => res.json())
             .then((jsonData) => {
                 this.book = jsonData;
-                console.log(this.book);
             });
     },
     mounted() {

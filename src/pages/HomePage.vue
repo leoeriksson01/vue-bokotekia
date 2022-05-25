@@ -88,11 +88,8 @@ export default {
     },
        methods: {
         fetchBooks(e) {
-            console.log(this.searchedQuery)
-            console.log(this.query)
             if (e.key == "Enter") {
                 this.searchedQuery = this.query
-                console.log(this.searchedQuery)
                 this.$router.push({
                     path: `/search/${this.query}`,
                     replace: true,
@@ -102,7 +99,6 @@ export default {
                 )
                     .then((res) => res.json())
                     .then((jsonData) => {
-                        console.log(jsonData.items);
                         this.books = jsonData.items;
                         this.query = "";
                     });
@@ -117,7 +113,6 @@ export default {
                 )
                     .then((res) => res.json())
                     .then((jsonData) => {
-                        console.log(jsonData.items);
                         this.books = jsonData.items;
                         this.query = "";
                     });
